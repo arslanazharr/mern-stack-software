@@ -2,8 +2,6 @@ const mongoose = require("mongoose");
 
 const URI = process.env.URI;
 
-console.log("URI", URI);
-
 const connectDB = async () => {
     try {
         await mongoose.connect(URI);
