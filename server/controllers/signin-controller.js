@@ -15,6 +15,7 @@ const signin = async (req, res) => {
         res.status(200).send({
           message: "Login Successful",
           token: await userExists.generateToken(),
+          username: userExists.username,
           userId: userExists._id.toString(),
         });
       } else {

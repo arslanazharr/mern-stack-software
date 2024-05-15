@@ -1,15 +1,17 @@
-require('dotenv').config();
-const express = require('express');
+require("dotenv").config();
+const express = require("express");
 const app = express();
 const routes = require("./router/routes");
 const connectDB = require("./utils/db");
+const cors = require("cors");
 
 app.use(express.json());
+app.use(cors());
 
 app.use("/api", routes);
 app.use((req, res) => {
   res.status(404).send({
-    message: "Page not found"
+    message: "Page not found",
   });
 });
 

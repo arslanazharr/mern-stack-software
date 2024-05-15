@@ -20,6 +20,7 @@ const signup = async (req, res) => {
       return res.status(200).send({
         message: "User registered successfully",
         token: await userCreated.generateToken(),
+        username: userCreated.username,
         userId: userCreated._id.toString(),
       });
     }
